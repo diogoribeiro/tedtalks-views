@@ -1,8 +1,9 @@
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 import useTalksList from '../../hooks/useTalksList';
 import Page from '../../components/Page/Page';
 import { countViews, getReleasesByYear, getTopFiveLikes, getTopFiveViews } from '../../utils/data';
+import { rootRoute } from '../../utils/routes';
 
 import './YearReview.css';
 
@@ -17,6 +18,12 @@ function YearReview() {
 
   return (
     <Page isLoading={isLoading}>
+      <div className="year-review-header-container">
+        <h3 className="year-review-title">{year} overview</h3>
+        <Link className="close-button" to={rootRoute}>
+          X
+        </Link>
+      </div>
       <div className="container">
         <section className="box">
           <header>
