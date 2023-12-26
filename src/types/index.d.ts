@@ -1,5 +1,3 @@
-import { ShowType } from '../../types/enum';
-
 export interface TedTalk {
   title: string;
   author: string;
