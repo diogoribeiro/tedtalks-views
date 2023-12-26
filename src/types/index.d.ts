@@ -1,8 +1,15 @@
-export interface Show {
+import { ShowType } from '../../types/enum';
+
+export interface TedTalk {
   title: string;
-  type: string; // TODO extract enum
-  description: string;
-  release_year: number;
-  imdb_score: number;
-  imdb_votes: number;
+  author: string;
+  date: string;
+  views: number;
+  likes: number;
+  link: string;
+}
+
+export interface YearAvgViews {
+  year: string;
+  avgViews: number;
 }
