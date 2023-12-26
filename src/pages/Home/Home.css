@@ -1,0 +1,23 @@
+.copy-container {
+  display: flex;
+  justify-content: center;
+  padding: 32px 0;
+}
+
+.content-container {
+  display: flex;
+  justify-content: center;
+}
+
+.copy {
+  display: block;
+  width: 80%;
+  text-align: center;
+}
+
+.notes {
+  display: block;
+  font-size: 12px;
+  width: 80%;
+  text-align: center;
+}

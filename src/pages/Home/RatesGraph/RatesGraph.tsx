@@ -6,6 +6,7 @@ import { getOnClickHandler } from './events';
 
 import Eye from '../../../components/Eye';
 import { axisYStyles, axisStyles, tooltipFlyoutStyles, tooltipStyles, barStyles } from './styles';
+import './RatesGraph.css';
 
 interface RatesGraphProps {
   onClickYear: (year: string) => void;
@@ -21,19 +22,21 @@ function RatesGraph({ onClickYear, yearsAvgViews }: RatesGraphProps) {
   const events = getOnClickHandler(onClickYear);
 
   return (
-    <VictoryChart domainPadding={20} height={200}>
-      <VictoryAxis label="Avg views per talk (in millions)" dependentAxis style={axisYStyles} />
-      <VictoryAxis label="Release year" style={axisStyles} />
-      <Eye />
-      <VictoryBar
-        barWidth={30}
-        data={data}
-        events={events}
-        labels={({ datum }) => `${datum.y.toFixed(2)}MM`}
-        labelComponent={<VictoryTooltip flyoutPadding={4} flyoutStyle={tooltipFlyoutStyles} style={tooltipStyles} />}
-        style={barStyles}
-      />
-    </VictoryChart>
+    <div className="graph-container">
+      <VictoryChart domainPadding={20} height={200}>
+        <VictoryAxis label="Avg views per talk (in millions)" dependentAxis style={axisYStyles} />
+        <VictoryAxis label="Release year" style={axisStyles} />
+        <Eye />
+        <VictoryBar
+          barWidth={30}
+          data={data}
+          events={events}
+          labels={({ datum }) => `${datum.y.toFixed(2)}MM`}
+          labelComponent={<VictoryTooltip flyoutPadding={4} flyoutStyle={tooltipFlyoutStyles} style={tooltipStyles} />}
+          style={barStyles}
+        />
+      </VictoryChart>
+    </div>
   );
 }
 
