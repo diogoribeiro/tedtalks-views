@@ -17,7 +17,7 @@ function useTalksList(): UseCatalog {
     return data;
   });
 
-  return { tedTalks: data, isError, isLoading };
+  return { tedTalks: data || [], isError, isLoading };
 }
 
 export default useTalksList;

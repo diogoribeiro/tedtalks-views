@@ -33,3 +33,21 @@ export function getAvgViewsPerYear(talks: TedTalk[]) {
     return avgViewsPerYear;
   }, [] as YearAvgViews[]);
 }
+
+export function getReleasesByYear(year: string, talks: TedTalk[]) {
+  return talks.filter((talk) => {
+    return talk.date.includes(year);
+  });
+}
+
+export function countViews(talks: TedTalk[]) {
+  return talks.reduce((total, talk) => total + talk.views, 0);
+}
+
+export function getTopFiveViews(talks: TedTalk[]) {
+  return talks.sort((talkA, talkB) => talkB.views - talkA.views).slice(0, 5);
+}
+
+export function getTopFiveLikes(talks: TedTalk[]) {
+  return talks.sort((talkA, talkB) => talkB.likes - talkA.likes).slice(0, 5);
+}
