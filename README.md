@@ -1,4 +1,4 @@
-**The live version of the app can be found at: https://statuesque-crumble-d640a9.netlify.app**
+**The live version of the app can be found at: https://courageous-phoenix-89caba.netlify.app**
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 
@@ -30,4 +30,12 @@ This folder has all the functions that helps the visual components to get and ma
 
 ## TODOs
 
-[ ] improve mobile support
+[ ] Make it responsive
+
+[ ] Add tests
+
+[ ] Add monitoring tool
+
+[ ] Add 2023 data
+
+[ ] Move data to a CDN
