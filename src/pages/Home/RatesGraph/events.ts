@@ -1,11 +1,15 @@
 import { EventPropTypeInterface, VictoryBarTTargetType } from 'victory';
 
+interface OnClickProps {
+  datum: {
+    xName: string;
+  };
+}
+
 export function getOnClickHandler(onClickYear: (year: string) => void) {
   const events: EventPropTypeInterface<VictoryBarTTargetType, number | string | number[] | string[]>[] = [];
 
-  /* eslint-disable-next-line  @typescript-eslint/no-explicit-any */
-  const handleOnClick = (props: any) => {
-    /* eslint-disable-next-line  react/prop-types */
+  const handleOnClick = (props: OnClickProps) => {
     onClickYear(props.datum.xName);
   };
 
