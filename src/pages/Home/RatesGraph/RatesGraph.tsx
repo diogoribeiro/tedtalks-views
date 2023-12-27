@@ -5,7 +5,13 @@ import { YearAvgViews } from '../../../types';
 import { getOnClickHandler } from './events';
 
 import Eye from '../../../components/Eye';
-import { axisYStyles, axisStyles, tooltipFlyoutStyles, tooltipStyles, barStyles } from './styles';
+import {
+  coloredAxisYStyles,
+  coloredAxisStyles,
+  tooltipFlyoutStyles,
+  tooltipStyles,
+  barStyles,
+} from './RatesGraph.chart.styles';
 import './RatesGraph.css';
 
 interface RatesGraphProps {
@@ -24,8 +30,8 @@ function RatesGraph({ onClickYear, yearsAvgViews }: RatesGraphProps) {
   return (
     <div className="graph-container">
       <VictoryChart domainPadding={20} height={200}>
-        <VictoryAxis label="Avg views per talk (in millions)" dependentAxis style={axisYStyles} />
-        <VictoryAxis label="Release year" style={axisStyles} />
+        <VictoryAxis label="Avg views per talk (in millions)" dependentAxis style={coloredAxisYStyles} />
+        <VictoryAxis label="Release year" style={coloredAxisStyles} />
         <Eye />
         <VictoryBar
           barWidth={30}

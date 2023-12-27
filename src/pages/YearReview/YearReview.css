@@ -1,4 +1,4 @@
-.year-review-header-container {
+.year-review-header-container header {
   align-items: center;
   display: flex;
   padding: 0 16px;
@@ -22,19 +22,21 @@
 
 .container {
   display: flex;
+  flex-wrap: wrap;
   margin-top: 48px;
-  gap: 8px;
+  gap: 16px;
+  padding: 0 8px 8px 8px;
 }
 
 .box {
   align-items: center;
   border-radius: 10px;
-  box-shadow: 0px 10px 32px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 32px 0 rgba(0, 0, 0, 0.1);
   display: flex;
   flex-flow: column;
-  height: 250px;
+  height: 350px;
   padding: 16px 0;
-  width: 33%;
+  width: calc(50% - 8px);
 }
 
 .box :not(header) {

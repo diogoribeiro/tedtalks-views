@@ -1,9 +1,11 @@
 import { Link, useParams } from 'react-router-dom';
 
 import useTalksList from '../../hooks/useTalksList';
-import Page from '../../components/Page/Page';
-import { countViews, getReleasesByYear, getTopFiveLikes, getTopFiveViews } from '../../utils/data';
 import { rootRoute } from '../../utils/routes';
+import { countViews, getReleasesByYear, getTopFiveLikes, getTopFiveViews } from '../../utils/data';
+
+import Page from '../../components/Page/Page';
+import ViewsByReleaseMonth from './ViewsByReleaseMonth';
 
 import './YearReview.css';
 
@@ -18,18 +20,27 @@ function YearReview() {
 
   return (
     <Page isLoading={isLoading}>
-      <div className="year-review-header-container">
-        <h3 className="year-review-title">{year} overview</h3>
-        <Link className="close-button" to={rootRoute}>
-          X
-        </Link>
-      </div>
-      <div className="container">
+      <article className="year-review-header-container">
+        <header>
+          <h3 className="year-review-title">{year} overview</h3>
+          <Link className="close-button" to={rootRoute}>
+            X
+          </Link>
+        </header>
+      </article>
+      <article className="container">
         <section className="box">
           <header>
             <h3>Total views</h3>
           </header>
           <span className="highlight number">{Intl.NumberFormat().format(totalViews)}</span>
+        </section>
+
+        <section className="box list">
+          <header>
+            <h3>Views by release month</h3>
+          </header>
+          <ViewsByReleaseMonth talks={yearReleases} />
         </section>
 
         <section className="box list">
@@ -59,7 +70,7 @@ function YearReview() {
             ))}
           </ul>
         </section>
-      </div>
+      </article>
     </Page>
   );
 }

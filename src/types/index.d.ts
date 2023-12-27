@@ -11,3 +11,10 @@ export interface YearAvgViews {
   year: string;
   avgViews: number;
 }
+
+export interface YearViewsByReleaseMonth {
+  monthLabel: string;
+  monthIndex: number;
+  year: number;
+  views: number;
+}
