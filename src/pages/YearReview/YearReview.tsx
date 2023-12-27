@@ -20,30 +20,30 @@ function YearReview() {
 
   return (
     <Page isLoading={isLoading}>
-      <article className="year-review-header-container">
+      <section className="year-review-header-container">
         <header>
           <h3 className="year-review-title">{year} overview</h3>
           <Link className="close-button" to={rootRoute}>
             X
           </Link>
         </header>
-      </article>
-      <article className="container">
-        <section className="box">
+      </section>
+      <section className="container">
+        <article className="box">
           <header>
             <h3>Total views</h3>
           </header>
           <span className="highlight number">{Intl.NumberFormat().format(totalViews)}</span>
-        </section>
+        </article>
 
-        <section className="box list">
+        <article className="box list">
           <header>
             <h3>Views by release month</h3>
           </header>
           <ViewsByReleaseMonth talks={yearReleases} />
-        </section>
+        </article>
 
-        <section className="box list">
+        <article className="box list">
           <header>
             <h3>Top 5 viewed</h3>
           </header>
@@ -55,9 +55,9 @@ function YearReview() {
               </li>
             ))}
           </ul>
-        </section>
+        </article>
 
-        <section className="box list">
+        <article className="box list">
           <header>
             <h3>Top 5 liked</h3>
           </header>
@@ -69,8 +69,8 @@ function YearReview() {
               </li>
             ))}
           </ul>
-        </section>
-      </article>
+        </article>
+      </section>
     </Page>
   );
 }
